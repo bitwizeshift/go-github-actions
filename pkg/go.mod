@@ -1,3 +1,3 @@
 module github.com/bitwizeshift/go-github-actions/pkg
 
-go 1.20.0
+go 1.20

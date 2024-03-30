@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+output_file=""
+
 while getopts "i:o:" opt; do
   case $opt in
     o)
@@ -16,9 +18,9 @@ done
 shift $((OPTIND -1))
 input_file=$1
 
-if [[ -z $input_file || -z $output_file ]]; then
-  echo "Usage: $0 <input_path> -o <output_file>"
-  exit 1
-fi
+# if [[ -z $input_file || -z $output_file ]]; then
+#   echo "Usage: $0 <input_path> -o <output_file>"
+#   exit 1
+# fi
 
-go build -o ${2} ${input_file}
+GOOS=js GOARCH=wasm go build -o ${output_file} ${input_file}

@@ -1,0 +1,7 @@
+name: Example Go GitHub Action
+description: A sample Go GitHub Action
+author: Matthew Rodusek
+
+runs:
+  using: "node20"
+  main: "dist/index.js"
